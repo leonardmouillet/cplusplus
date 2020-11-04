@@ -39,10 +39,6 @@ class Stack {
             std::cout << "\n";
         }
 
-        void delete_stack () {
-            delete [] tab ;
-        }
-
         bool is_empty () {
             return (top == 0);
         }
@@ -51,6 +47,9 @@ class Stack {
             return (top == size);
         }
 
+        ~Stack() {
+            delete [] tab;
+        }
 
     private:
         int size ;
