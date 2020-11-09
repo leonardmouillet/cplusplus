@@ -9,7 +9,8 @@ class Stack {
                 tab = new int [n];
             }
             else {
-                tab = new int [1]; // choix arbitraire
+                std::cout<<"la taille de la pile doit être positive"<<std::endl;
+                throw("la taille de la pile doit être positive");
             }
         }
 
@@ -18,7 +19,10 @@ class Stack {
                 tab[top] = i;
                 top = top + 1;
             }
-            // sinon, on ne fait rien
+            else{
+                std::cout<<"la pile est pleine"<<std::endl;
+                throw("la pile est pleine");
+            }
         }
 
         int pop(){
@@ -27,7 +31,8 @@ class Stack {
                 return tab[top];
             }
             else {
-                return 0; // choix arbitraire
+                std::cout<<"la pule est vide"<<std::endl;
+                throw("la pile est vide");
             }
         }
 
