@@ -2,6 +2,12 @@
 #include"stack.h"
 
 int main (int argn, char* argv []){
+  
+  // vr: mettre les tests dans une fonction test_intstack et non
+  // directement dans le main afin de pouvoir réutiliser cette
+  // fonction de test lorsque nous modifier le code de votre pile
+  
+   
     if ( (argn > 1) and (argv[1][0]=='1') ){ // l'argument "1" permet de tester le premier cas d'erreur (taille négative)
         Stack pile_de_taille_negative (-2) ;
     }
