@@ -30,6 +30,6 @@ int main (int argn, char* argv []){
         pile.print(); // [1, 2
         std::cout<<pile.pop()<<std::endl; // 2
         pile.print(); // [1,
-        return 0;
+        return 0; // vr: la fonction main ne doit pas retourner 0 que dans ce cas
     }
 }

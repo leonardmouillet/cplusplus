@@ -15,7 +15,7 @@ class Stack {
         }
 
         void push(int i){
-            if (top < size){
+	  if (top < size){ // vr: utilise is_full 
                 tab[top] = i;
                 top = top + 1;
             }
@@ -26,7 +26,7 @@ class Stack {
         }
 
         int pop(){
-            if (top > 0){
+            if (top > 0){ // vr: utilise is_empty
                 top = top - 1;
                 return tab[top];
             }
@@ -41,7 +41,7 @@ class Stack {
             for (int i=0 ; i < top ; i++){
                 std::cout << tab[i] << ", ";
             }
-            std::cout << "\n";
+            std::cout << "]\n";
         }
 
         bool is_empty () {
