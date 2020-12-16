@@ -9,29 +9,32 @@ class Stack {
                 tab = new int [n];
             }
             else {
-                std::cout<<"la taille de la pile doit être positive"<<std::endl;
                 throw("la taille de la pile doit être positive");
             }
         }
 
+        Stack (const Stack& ref) : size(ref.size), top(ref.top), tab(new int [size]){
+            for (int i = 0 ; i < top; ++i) {
+                tab[i] = ref.tab[i];
+            }
+        }
+
         void push(int i){
-	  if (top < size){ // vr: utilise is_full 
+            if (top < size){
                 tab[top] = i;
                 top = top + 1;
             }
             else{
-                std::cout<<"la pile est pleine"<<std::endl;
                 throw("la pile est pleine");
             }
         }
 
         int pop(){
-            if (top > 0){ // vr: utilise is_empty
+            if (top > 0){
                 top = top - 1;
                 return tab[top];
             }
             else {
-                std::cout<<"la pule est vide"<<std::endl;
                 throw("la pile est vide");
             }
         }
@@ -41,7 +44,7 @@ class Stack {
             for (int i=0 ; i < top ; i++){
                 std::cout << tab[i] << ", ";
             }
-            std::cout << "]\n";
+            std::cout << "\n";
         }
 
         bool is_empty () {
