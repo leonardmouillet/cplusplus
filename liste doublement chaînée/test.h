@@ -1,4 +1,4 @@
-#include "intlist.h"
+#pragma once
 
 void test_list_constructor();
 void test_add_front();

@@ -1,3 +1,5 @@
+#pragma once
+// vr: protège ton header file contre l'inclusion multiple du header
 #include<iostream>
 
 class IntCell { 
@@ -6,10 +8,10 @@ class IntCell {
 
 private:
 
-    IntCell (int i) : 
-    value (i), 
-    previous_cell (nullptr), 
-    next_cell (nullptr) {}
+  IntCell (int i) : 
+      value (i), 
+      previous_cell (nullptr), 
+      next_cell (nullptr) {}
 
     int value;
     IntCell* previous_cell;
@@ -21,10 +23,8 @@ class IntList {
 
 public:
 
-    IntList () {
-        head = nullptr;
-        tail = nullptr;
-    }
+    // vr: utilise la liste d'initialisation
+    IntList () : head(nullptr), tail(nullptr) {}
 
     void add_front (int i) {
         IntCell* new_cell = new IntCell (i);
@@ -129,15 +129,15 @@ public:
                     tail = (*top).previous_cell;
                 }
                 delete top ;
-            }
+            } // vr: attention ici tu viens de faire delete top et
+	      // ensuite tu fais top->next_cell donc un segfault
+	    // tu dois mettre un else 
             top = (*top).next_cell;
         }
         if (test==false){
             throw ("pas de tel élément dans la liste");
         }         
     }
-
-
 
 private:
    IntCell* head;
