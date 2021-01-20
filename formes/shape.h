@@ -1,4 +1,5 @@
 #pragma once 
+#include <iostream>
 
 class Shape {
 
@@ -8,9 +9,13 @@ protected :
 
 public :
 
-    void moove (int x, int y) {
-        x = x;
-        y = y;
+    void moove (int a, int b) {
+        x = a;
+        y = b;
+    }
+
+    void print_location(){
+        std::cout <<"("<< x <<","<< y <<")"<< std::endl;
     }
 
     virtual int area()=0;
@@ -28,7 +33,7 @@ class Circle : public Shape{
 
         Circle(int x, int y, int r) : Shape(x,y), r(r) {}
 
-        int area () {return 3*(r^2);}
+        int area () {return 3*(r*r);}
 
         private :
 
@@ -41,7 +46,7 @@ class Square : public Shape{
         public :
 
         Square(int x, int y,int c) : Shape(x,y) , c(c) {}
-        int area() { return c^2 ;}
+        int area() { return c*c ;}
 
         private :
 

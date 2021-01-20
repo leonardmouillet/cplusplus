@@ -11,7 +11,9 @@ clean:
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
+shape.o : shape.h
+
 main.o : main.cpp test.o test.h
 
-test.o : test.cpp shape.h
+test.o : test.h shape.h
 
