@@ -1,3 +1,4 @@
+#include "test.h"
 #include "intlist.h"
 
 void test_list_constructor(){
