@@ -1,0 +1,2 @@
+Le fichier makefile permet de compiler les programmes.
+Le programme main permet d'executer les fonctions de test (argument "0"), d'encode une phrase en morse sous forme de fichier audio (argument "1") ou de décoder un fichier audio en morse (argument "2").
